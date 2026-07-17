@@ -1,3 +1,4 @@
+dna_database = [] #initiating empty db as asked in step 9
 dna = input("Type the DNA sequence: ").upper() #creating user input
 print(dna)
 
@@ -17,22 +18,19 @@ if is_valid:
     counter_G = dna.count("G")
     counter_C = dna.count("C")
 
-    print(f"Total DNA lenght: {len(dna)}")
-    if len(dna) >= 10:
-        print("Long DNA Sequence")
-    else:
-        print("Short DNA Sequence")
-    print(f"A = {counter_A}")
-    print(f"T = {counter_T}")
-    print(f"G = {counter_G}")
-    print(f"C = {counter_C}")
-
-    start_codon = "ATG"
-    if start_codon in dna:
-        print(f"Start Codon found in position {dna.find("ATG") + 1}")
-    else:
-        print("Start Codon Not Found")
-
+    sequence_analysis = {
+        "Sequence ID" : "",
+        "DNA Sequence": dna,
+        "Sequence Length": len(dna),
+        "A Count:": counter_A,
+        "T Count:": counter_T,
+        "G Count:": counter_G,
+        "C count:": counter_C,
+        "Start Codon:": f"Start Codon Found in position {dna.find("ATG") + 1}"
+        if "ATG" in dna else "Start Codon Not Found"
+    }
+    dna_database.append(sequence_analysis)
+    print(sequence_analysis)
 else: 
     print("Invalid DNA sequence")
 
