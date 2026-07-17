@@ -14,23 +14,13 @@ else:
     print("Invalid DNA sequence")
 
 #initializing counters
-counter_A = 0
-counter_T = 0
-counter_G = 0
-counter_C = 0
+counter_A = dna.count("A")
+counter_T = dna.count("T")
+counter_G = dna.count("G")
+counter_C = dna.count("C")
 
-for nucleotideo in dna:
-    if nucleotideo == "A":
-        counter_A += 1
-    elif nucleotideo == "T":
-        counter_T += 1
-    elif nucleotideo == "G":
-        counter_G += 1
-    elif nucleotideo == "C":
-        counter_C += 1
-    else:
-        break
 
+print(f"Total DNA lenght: {len(dna)}")
 print(f"A = {counter_A}")
 print(f"T = {counter_T}")
 print(f"G = {counter_G}")
